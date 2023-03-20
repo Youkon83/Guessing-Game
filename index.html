@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Guessing Game</title>
+  </head>
+
+  <body>
+    <script>
+        var answer = Math.floor(Math.random() * 100 + 1);
+        var num = Number(prompt("Guess a number between 1 and 100"));
+        var body = document.querySelector("body");
+        while(true){
+            if(num == answer){
+                body.style.backgroundColor = "blue";
+                body.style.color = "white";
+                body.innerHTML = "<h1> You win! the answer was " + num + "</h1>" + "<p> refresh to play again!</p>";
+                break;
+            }
+            else if(num < answer){
+                num = Number(prompt("The answer is greater than " + num + " guess again!"))
+            }
+            else{
+                num = Number(prompt("The answer is less than " + num + " guess again!"))
+            }
+        }
+    </script>
+
+  </body>
+</html>
